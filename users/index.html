@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+
+
+    <script src="libs/lodash.min.js"></script>
+    <script src="scripts.js"></script>
+    <script src="apps.js"></script>
+    <script src="storeContacts.js"></script>
+    <script src="createCustomer.js"></script>
+    <script src="editContacts.js"></script>
+    <script src="deleteContact.js"></script>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+
+</head>
+
+<body onload="getContacts()">
+<div id="jotaki">
+<form id="formi">
+
+<h1 id="user-header" class="user"> User information:</h1>
+<h2 id="user-header2" class="user"> Add contact:</h2>
+    <div id="jotaki2">
+
+
+        <p>Firstname:</p>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="fname">
+                <label class="mdl-textfield__label" for="fname" id="fnameLabel">Firstname...</label>
+            </div>
+
+        <p>Lastname</p>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="lname">
+                <label class="mdl-textfield__label" for="lname" id="lnameLabel">Lastname...</label>
+            </div>
+        <p>Phone:</p>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="phone">
+                <label class="mdl-textfield__label" for="phone" id="phoneLabel">Phone...</label>
+                <span class="mdl-textfield__error">Input is not a number!</span>
+            </div>
+        <p>Street address:</p>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="address">
+                <label class="mdl-textfield__label" for="address" id="addressLabel">Street address...</label>
+            </div>
+        <p>Postal code:</p>
+        <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="postalCode">
+            <label class="mdl-textfield__label" for="postalCode" id="postalCodeLabel">Postal code...</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+        <p>City:</p>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="city">
+                <label class="mdl-textfield__label" for="city" id="cityLabel">City...</label>
+            </div>
+
+        <p></p>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="addButton" onclick="addContacts()">ADD</button>
+
+
+    </div>
+</form>
+<div class="overflow">
+    <table class="mdl-data-table mdl-js-data-table">
+
+        <caption>Contatcs</caption>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric" scope="col">Firstname</th>
+                <th class="mdl-data-table__cell--non-numeric" scope="col">Lastname</th>
+                <th class="mdl-data-table__cell--non-numeric" scope="col">Phone</th>
+                <th class="mdl-data-table__cell--non-numeric" scope="col">Address</th>
+                <th class="mdl-data-table__cell--non-numeric" scope="col">Edit</th>
+                <th class="mdl-data-table__cell--non-numeric" scope="col">Delete</th>
+            </tr>
+        <tbody id="customerTable" >
+        </tbody>
+
+    </table>
+</div>
+
+
+
+</div>
+</body>
+
+</html>
